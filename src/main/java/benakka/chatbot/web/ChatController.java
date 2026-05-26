@@ -22,7 +22,7 @@ public class ChatController {
 
     //@GetMapping("/chat")
     @GetMapping(value = "/chat", produces = MediaType.TEXT_PLAIN_VALUE)
-    public Flux<String> chat(@RequestParam String query) {
+    public String chat(@RequestParam String query) {
         /*return chatClient.prompt()
                 .user(query)
                 .stream()

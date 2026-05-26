@@ -36,11 +36,10 @@ public class AIAgent {
                 .build();
     }
 
-    public Flux<String> ask(@RequestParam String query) {
+    public String ask(@RequestParam String query) {
         return chatClient.prompt()
                 .user(query)
-                .stream()
-                .content();
+                .call().content();
     }
 
 
